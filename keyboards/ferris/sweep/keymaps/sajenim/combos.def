@@ -1,0 +1,39 @@
+#define CK_DQUO "\"\""SS_TAP(X_LEFT)
+#define CK_QUOT "\'\'"SS_TAP(X_LEFT)
+
+// name               result          1st chord key  2nd chord key  3rd chord key
+
+// vertical
+COMB(NUM_1,           KC_1,           KC_W,          HRM_C)
+COMB(NUM_2,           KC_2,           KC_L,          HRM_R)
+COMB(NUM_3,           KC_3,           KC_Y,          HRM_S)
+COMB(NUM_4,           KC_4,           KC_P,          HRM_T)
+COMB(NUM_5,           KC_5,           KC_B,          KC_G)
+COMB(NUM_6,           KC_6,           KC_Z,          KC_M)
+COMB(NUM_7,           KC_7,           KC_F,          HRM_N)
+COMB(NUM_8,           KC_8,           KC_O,          HRM_E)
+COMB(NUM_9,           KC_9,           KC_U,          HRM_I)
+COMB(NUM_0,           KC_0,           KC_QUOT,       HRM_A)
+
+// middle row
+COMB(rs_tab,          KC_TAB,         HRM_R,         HRM_S)
+SUBS(rt_dquo,         CK_DQUO,        HRM_R,         HRM_T)
+COMB(st_delwrd,       C(KC_BSPC),     HRM_S,         HRM_T)
+
+COMB(ne_esc,          KC_ESC,         HRM_N,         HRM_E)
+SUBS(ni_quot,         CK_QUOT,        HRM_N,         HRM_I)
+COMB(ei_ent,          KC_ENT,         HRM_E,         HRM_I)
+SUBS(nei_write,       "\e:w\n",       HRM_N,         HRM_E,         HRM_I)
+
+// bottom row
+COMB(jv_coln,         KC_COLN,        KC_J,          KC_V)
+COMB(vd_m1a,          G(KC_A),        KC_V,          SYM_D)
+COMB(dk_shift,        OSM(MOD_LSFT),  SYM_D,         KC_K)
+
+COMB(xh_shift,        OSM(MOD_RSFT),  KC_X,          SYM_H)
+COMB(h_slsh_m4a,      A(KC_A),        SYM_H,         KC_SLSH)
+COMB(h_comm_lead,     QK_LEAD,        SYM_H,         KC_COMM)
+COMB(slsh_comm_bsls,  KC_BSLS,        KC_SLSH,       KC_COMM)
+
+/* vim: set filetype=c: */
+
