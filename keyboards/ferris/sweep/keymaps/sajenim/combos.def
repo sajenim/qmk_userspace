@@ -1,6 +1,3 @@
-#define CK_DQUO "\"\""SS_TAP(X_LEFT)
-#define CK_QUOT "\'\'"SS_TAP(X_LEFT)
-
 // name               result          1st chord key  2nd chord key  3rd chord key
 
 // vertical
@@ -17,11 +14,11 @@ COMB(NUM_0,           KC_0,           KC_QUOT,       HRM_A)
 
 // middle row
 COMB(rs_tab,          KC_TAB,         HRM_R,         HRM_S)
-SUBS(rt_dquo,         CK_DQUO,        HRM_R,         HRM_T)
+SUBS(rt_dquo,         "\"\"\ei",      HRM_R,         HRM_T)
 COMB(st_delwrd,       C(KC_BSPC),     HRM_S,         HRM_T)
 
 COMB(ne_esc,          KC_ESC,         HRM_N,         HRM_E)
-SUBS(ni_quot,         CK_QUOT,        HRM_N,         HRM_I)
+SUBS(ni_quot,         "\'\'\ei",      HRM_N,         HRM_I)
 COMB(ei_ent,          KC_ENT,         HRM_E,         HRM_I)
 SUBS(nei_write,       "\e:w\n",       HRM_N,         HRM_E,         HRM_I)
 
