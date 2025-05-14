@@ -42,9 +42,7 @@ combos:
   - {p: [16, 17],   k: "Esc",      l: ["CANARY"]}
   - {p: [17, 18],   k: "Ent",      l: ["CANARY"]}
   - {p: [21, 22],   k: ":",        l: ["CANARY"]}
-  - {p: [22, 23],   k: "M-a",      l: ["CANARY"]}
-  - {p: [23, 24],   k: "OS Shift", l: ["CANARY"]}
-  - {p: [25, 26],   k: "OS Shift", l: ["CANARY"]}
-  - {p: [26, 27],   k: "M1-a",     l: ["CANARY"]}
+  - {p: [22, 23],   k: "OS Shift", l: ["CANARY"]}
+  - {p: [26, 27],   k: "OS Shift", l: ["CANARY"]}
   - {p: [27, 28],   k: "\\",       l: ["CANARY"]}
 

@@ -14,21 +14,17 @@ COMB(NUM_0,           KC_0,           KC_QUOT,       HRM_A)
 
 // middle row
 COMB(rs_tab,          KC_TAB,         HRM_R,         HRM_S)
-SUBS(rt_dquo,         "\"\"\ei",      HRM_R,         HRM_T)
 COMB(st_delwrd,       C(KC_BSPC),     HRM_S,         HRM_T)
 
 COMB(ne_esc,          KC_ESC,         HRM_N,         HRM_E)
-SUBS(ni_quot,         "\'\'\ei",      HRM_N,         HRM_I)
 COMB(ei_ent,          KC_ENT,         HRM_E,         HRM_I)
 SUBS(nei_write,       "\e:w\n",       HRM_N,         HRM_E,         HRM_I)
 
 // bottom row
 COMB(jv_coln,         KC_COLN,        KC_J,          KC_V)
-COMB(vd_m1a,          G(KC_A),        KC_V,          SYM_D)
-COMB(dk_shift,        OSM(MOD_LSFT),  SYM_D,         KC_K)
+COMB(vd_shift,        OSM(MOD_LSFT),  KC_V,          SYM_D)
 
-COMB(xh_shift,        OSM(MOD_RSFT),  KC_X,          SYM_H)
-COMB(h_slsh_m4a,      A(KC_A),        SYM_H,         KC_SLSH)
+COMB(h_slash_shift,   OSM(MOD_RSFT),  SYM_H,         KC_SLSH)
 COMB(h_comm_lead,     QK_LEAD,        SYM_H,         KC_COMM)
 COMB(slsh_comm_bsls,  KC_BSLS,        KC_SLSH,       KC_COMM)
 
