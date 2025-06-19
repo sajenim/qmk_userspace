@@ -13,7 +13,7 @@ COMB(NUM_9,           KC_9,           KC_U,          HRM_I)
 COMB(NUM_0,           KC_0,           KC_QUOT,       HRM_A)
 
 // top row
-COMB(wl_tmux,         C(KC_B),        KC_W,          KC_L)
+COMB(ly_lead,         QK_LEAD,        KC_L,          KC_Y)
 COMB(fo_lbrc,         KC_LBRC,        KC_F,          KC_O)
 COMB(ou_rbrc,         KC_RBRC,        KC_O,          KC_U)
 
@@ -27,10 +27,11 @@ SUBS(nei_write,       "\e:w\n",       HRM_N,         HRM_E,         HRM_I)
 
 // bottom row
 COMB(jv_coln,         KC_COLN,        KC_J,          KC_V)
-COMB(vd_shift,        OSM(MOD_LSFT),  KC_V,          SYM_D)
+COMB(vd_xmonad,       G(KC_A),        KC_V,          SYM_D)
+COMB(dk_shift,        OSM(MOD_LSFT),  SYM_D,         KC_K)
 
-COMB(h_slash_shift,   OSM(MOD_RSFT),  SYM_H,         KC_SLSH)
-COMB(h_comm_lead,     QK_LEAD,        SYM_H,         KC_COMM)
+COMB(xh_shift,        OSM(MOD_RSFT),  KC_X,          SYM_H)
+COMB(h_slash_wterm,   A(KC_A),        SYM_H,         KC_SLSH)
 COMB(slsh_comm_bsls,  KC_BSLS,        KC_SLSH,       KC_COMM)
 
 /* vim: set filetype=c: */
