@@ -195,10 +195,6 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
         case HRM_S: return KC_Y;     // "SY" sfb (0.024%)
         case SYM_D: return KC_G;     // "DG" sfb (0.021%)
 
-        // Coding shortcuts
-        case KC_PLUS: return KC_EQL;
-        case KC_MINS: return KC_EQL;
-
         // Magic Keycodes
         case KC_B:    return MG_EFORE;
         case HRM_I:   return MG_ON;
@@ -211,6 +207,19 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
         case KC_X:    return MG_ES;
         case KC_COMM: return MG_BUT;
         case KC_SPC:  return MG_THE;
+
+        // Compound Assignment
+        case KC_PLUS: return KC_EQL;
+        case KC_MINS: return KC_EQL;
+        case KC_ASTR: return KC_EQL;
+        case KC_SLSH: return KC_EQL;
+
+        // Autopairs
+        case KC_RABK: return KC_LEFT;
+        case KC_RPRN: return KC_LEFT;
+        case KC_RBRC: return KC_LEFT;
+        case KC_RCBR: return KC_LEFT;
+
     }
     return KC_TRNS;
     // clang-format on
@@ -292,6 +301,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 void leader_end_user() {
     if (leader_sequence_one_key(KC_ESC)) {
         layer_clear();
+
+        // enable caps word
+    } else if (leader_sequence_one_key(KC_SPC)) {
+        enable_caps_word();
 
         // shortcuts
     } else if (leader_sequence_one_key(KC_Y)) { // yank
