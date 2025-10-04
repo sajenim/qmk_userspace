@@ -25,11 +25,6 @@
 #define CHORDAL_HOLD
 #define QUICK_TAP_TERM 0
 
-// Leader
-#define LEADER_NO_TIMEOUT       // disable initial timeout
-#define LEADER_PER_KEY_TIMING   // reset timeout for each key
-#define LEADER_TIMEOUT 250
-
 // Timeouts
 #define ONESHOT_TIMEOUT 5000
 

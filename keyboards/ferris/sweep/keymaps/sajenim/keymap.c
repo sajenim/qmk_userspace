@@ -15,7 +15,6 @@
  */
 
 #include QMK_KEYBOARD_H
-#include "features/casemodes.h"
 
 enum layers {
     CANARY,
@@ -40,6 +39,7 @@ enum custom_keycodes {
     MG_THE,
 };
 
+
 /* Thumb Keys:
  * dual role keys for accessing layers and to offload shift from pinkies */
 
@@ -49,16 +49,16 @@ enum custom_keycodes {
 /* Home Row Mods:
  * https://precondition.github.io/home-row-mods */
 
-#define HRM_C LSFT_T(KC_C)
-#define HRM_R LCTL_T(KC_R)
-#define HRM_S LALT_T(KC_S)
+#define HRM_R LALT_T(KC_R)
+#define HRM_S LSFT_T(KC_S)
 #define HRM_T LGUI_T(KC_T)
+#define HRM_D LCTL_T(KC_D)
+#define HRM_J LT(SYM, KC_J)
 #define HRM_N RGUI_T(KC_N)
-#define HRM_E RALT_T(KC_E)
-#define HRM_I RCTL_T(KC_I)
-#define HRM_A RSFT_T(KC_A)
-#define SYM_D LT(SYM, KC_D)
-#define SYM_H LT(SYM, KC_H)
+#define HRM_E RSFT_T(KC_E)
+#define HRM_I RALT_T(KC_I)
+#define HRM_H RCTL_T(KC_H)
+#define HRM_COM LT(SYM, KC_COMM)
 
 /* One Shot Keys:
  * https://github.com/qmk/qmk_firmware/blob/master/docs/one_shot_keys.md */
@@ -80,9 +80,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,--------------------------------------------.                    ,--------------------------------------------.
          KC_W,    KC_L,    KC_Y,    KC_P,    KC_B,                         KC_Z,    KC_F,    KC_O,    KC_U, KC_QUOT,
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
-        HRM_C,   HRM_R,   HRM_S,   HRM_T,    KC_G,                         KC_M,   HRM_N,   HRM_E,   HRM_I,   HRM_A,
+         KC_C,   HRM_R,   HRM_S,   HRM_T,    KC_G,                         KC_M,   HRM_N,   HRM_E,   HRM_I,    KC_A,
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
-         KC_Q,    KC_J,    KC_V,   SYM_D,    KC_K,                         KC_X,   SYM_H, KC_SLSH, KC_COMM,  KC_DOT,
+         KC_Q,   HRM_J,    KC_V,   HRM_D,    KC_K,                         KC_X,   HRM_H, KC_SLSH, HRM_COM,  KC_DOT,
   //|--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------|
                                           NAV_REP,  KC_SPC,    KC_BSPC, NUM_MAG
                                       //`-----------------'  `-----------------'
@@ -92,9 +92,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,--------------------------------------------.                    ,--------------------------------------------.
       XXXXXXX, KC_MPRV, KC_MPLY, KC_MNXT, KC_VOLU,                      KC_PGUP, KC_HOME,   KC_UP,  KC_END, XXXXXXX,
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
-      OS_LSFT, OS_LCTL, OS_LALT, OS_LGUI, KC_VOLD,                      KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT,  KC_DEL,
+      XXXXXXX, OS_LALT, OS_LSFT, OS_LGUI, KC_VOLD,                      KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT,  KC_DEL,
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      XXXXXXX, XXXXXXX, XXXXXXX, OS_LCTL, XXXXXXX,                      XXXXXXX,  KC_TAB, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------|
                                           _______, _______,    _______, _______
                                       //`-----------------'  `-----------------'
@@ -102,11 +102,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [NUM] = LAYOUT_split_3x5_2(
   //,--------------------------------------------.                    ,--------------------------------------------.
-      KC_LPRN,    KC_7,    KC_8,    KC_9, KC_RPRN,                      XXXXXXX, KC_ASTR, KC_PERC, KC_SLSH, XXXXXXX,
+      KC_LPRN,    KC_7,    KC_8,    KC_9, KC_RPRN,                      XXXXXXX, KC_PLUS, KC_MINS, KC_ASTR, KC_SLSH,
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
-         KC_0,    KC_4,    KC_5,    KC_6,  KC_DOT,                      XXXXXXX, OS_RGUI, OS_RALT, OS_RCTL, OS_RSFT,
+         KC_0,    KC_4,    KC_5,    KC_6,  KC_EQL,                      XXXXXXX, OS_RGUI, OS_RSFT, OS_RALT, XXXXXXX,
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
-      KC_LABK,    KC_1,    KC_2,    KC_3, KC_RABK,                      XXXXXXX, KC_PLUS,  KC_EQL, KC_MINS, XXXXXXX,
+      KC_COMM,    KC_1,    KC_2,    KC_3,  KC_DOT,                      XXXXXXX, OS_RCTL, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------|
                                           _______, _______,    _______, _______
                                       //`-----------------'  `-----------------'
@@ -116,9 +116,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,--------------------------------------------.                    ,--------------------------------------------.
        KC_GRV, KC_LABK, KC_MINS, KC_RABK, XXXXXXX,                      XXXXXXX, KC_LBRC, KC_UNDS, KC_RBRC, KC_PLUS,
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
-      KC_EXLM, KC_LPRN,  KC_EQL, KC_RPRN, KC_HASH,                      KC_PERC, KC_LCBR,  KC_DLR, KC_RCBR, KC_SCLN,
+      KC_PIPE, KC_LPRN,  KC_EQL, KC_RPRN, KC_HASH,                      KC_PERC, KC_LCBR,  KC_DLR, KC_RCBR, KC_SCLN,
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
-      KC_PIPE, KC_AMPR, KC_CIRC,   KC_AT, XXXXXXX,                      XXXXXXX, KC_ASTR, _______, _______, _______,
+      KC_EXLM, KC_AMPR, KC_CIRC,   KC_AT, XXXXXXX,                      XXXXXXX, KC_ASTR, _______, _______, _______,
   //|--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------|
                                           _______, _______,    _______, _______
                                       //`-----------------'  `-----------------'
@@ -146,18 +146,6 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     // Activate function layer
     state = update_tri_layer_state(state, NAV, NUM, FUN);
     return state;
-}
-
-/* Caseword:
- * configure which keys are "word breaking" */
-
-bool use_default_xcase_separator(uint16_t keycode, const keyrecord_t *record) {
-    switch (keycode) {
-        case KC_A ... KC_Z:
-        case KC_1 ... KC_0:
-            return true;
-    }
-    return false;
 }
 
 /* Repeat key:
@@ -193,19 +181,19 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
         case KC_O:  return KC_E;     // "OE" sfb (0.060%)
         case KC_P:  return KC_T;     // "PT" sfb (0.050%)
         case HRM_S: return KC_Y;     // "SY" sfb (0.024%)
-        case SYM_D: return KC_G;     // "DG" sfb (0.021%)
+        case HRM_D: return KC_G;     // "DG" sfb (0.021%)
 
         // Magic Keycodes
         case KC_B:    return MG_EFORE;
         case HRM_I:   return MG_ON;
-        case KC_J:    return MG_UST;
+        case HRM_J:   return MG_UST;
         case KC_M:    return MG_ENT;
         case HRM_N:   return MG_ION;
         case HRM_T:   return MG_MENT;
         case KC_V:    return MG_ER;
         case KC_W:    return MG_HICH;
         case KC_X:    return MG_ES;
-        case KC_COMM: return MG_BUT;
+        case HRM_COM: return MG_BUT;
         case KC_SPC:  return MG_THE;
 
         // Compound Assignment
@@ -229,11 +217,6 @@ uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
  * program the behaviour of any keycode */
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    // Process case modes
-    if (!process_case_modes(keycode, record)) {
-        return false;
-    }
-
     // Process our custom keys
     switch (keycode) {
         case NAV_REP:
@@ -270,13 +253,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         if (rep_count > 0) {
             switch (keycode) {
                 // Repeat Key Overrides
-                case HRM_A:   SEND_STRING(/*a*/ "nd"    ); return false; // "and"     trigram (3.293%)
+                case KC_A:    SEND_STRING(/*a*/ "nd"    ); return false; // "and"     trigram (3.293%)
                 case HRM_I:   SEND_STRING(/*i*/ "ng"    ); return false; // "ing"     trigram (3.476%)
                 case KC_Y:    SEND_STRING(/*y*/ "ou"    ); return false; // "you"     trigram (3.492%)
                 case HRM_N:   SEND_STRING(/*n*/ "f"     ); return false; // "nf"      sfb     (0.036%)
                 case KC_B:    SEND_STRING(/*b*/ "ecause"); return false; // "because" brief
                 case KC_W:    SEND_STRING(/*w*/ "ould"  ); return false; // "would"   brief
-                case KC_COMM: SEND_STRING(/*,*/ " and"  ); return false; // ", and"   brief
+                case HRM_COM: SEND_STRING(/*,*/ " and"  ); return false; // ", and"   brief
                 case KC_SPC:  SEND_STRING(/* */ "for"   ); return false; // " for"    brief
 
                 //  Miscellaneous
@@ -295,48 +278,3 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     // clang-format on
 }
 
-/* Leader Key:
- * hit sequences of keys to trigger custom functionality */
-
-void leader_end_user() {
-    if (leader_sequence_one_key(KC_ESC)) {
-        layer_clear();
-
-        // enable caps word
-    } else if (leader_sequence_one_key(KC_SPC)) {
-        enable_caps_word();
-
-        // shortcuts
-    } else if (leader_sequence_one_key(KC_Y)) { // yank
-        tap_code16(C(KC_C));
-    } else if (leader_sequence_one_key(KC_P)) { // paste
-        tap_code16(C(KC_V));
-    } else if (leader_sequence_one_key(KC_D)) { // delete
-        tap_code16(C(KC_X));
-    } else if (leader_sequence_one_key(KC_U)) { // undo
-        tap_code16(C(KC_Z));
-    } else if (leader_sequence_one_key(KC_W)) { // write
-        tap_code16(C(KC_S));
-
-        // casemodes
-    } else if (leader_sequence_one_key(KC_C)) { // camelCase
-        enable_xcase_with(OSM(MOD_LSFT));
-    } else if (leader_sequence_one_key(KC_S)) { // snake_case
-        enable_xcase_with(KC_UNDS);
-    } else if (leader_sequence_one_key(KC_K)) { // kebab-case
-        enable_xcase_with(KC_MINS);
-    } else if (leader_sequence_one_key(KC_M)) { // MACRO_CASE
-        enable_caps_word();
-        enable_xcase_with(KC_UNDS);
-
-        // toggle layers
-    } else if (leader_sequence_two_keys(KC_L, KC_E)) { // e for extend as n for num is taken
-        layer_on(NAV);
-    } else if (leader_sequence_two_keys(KC_L, KC_N)) {
-        layer_on(NUM);
-    } else if (leader_sequence_two_keys(KC_L, KC_S)) {
-        layer_on(SYM);
-    } else if (leader_sequence_two_keys(KC_L, KC_F)) {
-        layer_on(FUN);
-    }
-}

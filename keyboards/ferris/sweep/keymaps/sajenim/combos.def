@@ -1,38 +1,38 @@
 // name               result          1st chord key  2nd chord key  3rd chord key
 
-// vertical
-COMB(NUM_1,           KC_1,           KC_W,          HRM_C)
-COMB(NUM_2,           KC_2,           KC_L,          HRM_R)
-COMB(NUM_3,           KC_3,           KC_Y,          HRM_S)
-COMB(NUM_4,           KC_4,           KC_P,          HRM_T)
-COMB(NUM_5,           KC_5,           KC_B,          KC_G)
-COMB(NUM_6,           KC_6,           KC_Z,          KC_M)
-COMB(NUM_7,           KC_7,           KC_F,          HRM_N)
-COMB(NUM_8,           KC_8,           KC_O,          HRM_E)
-COMB(NUM_9,           KC_9,           KC_U,          HRM_I)
-COMB(NUM_0,           KC_0,           KC_QUOT,       HRM_A)
+// vertical numbers
+COMB(num_1,           KC_1,           KC_W,          KC_C)
+COMB(num_2,           KC_2,           KC_L,          HRM_R)
+COMB(num_3,           KC_3,           KC_Y,          HRM_S)
+COMB(num_4,           KC_4,           KC_P,          HRM_T)
+COMB(num_5,           KC_5,           KC_B,          KC_G)
+COMB(num_6,           KC_6,           KC_Z,          KC_M)
+COMB(num_7,           KC_7,           KC_F,          HRM_N)
+COMB(num_8,           KC_8,           KC_O,          HRM_E)
+COMB(num_9,           KC_9,           KC_U,          HRM_I)
+COMB(num_0,           KC_0,           KC_QUOT,       KC_A)
 
 // top row
-COMB(ly_lead,         QK_LEAD,        KC_L,          KC_Y)
-COMB(fo_lbrc,         KC_LBRC,        KC_F,          KC_O)
-COMB(ou_rbrc,         KC_RBRC,        KC_O,          KC_U)
+COMB(capsword,        CW_TOGG,        KC_L,          KC_Y)
+COMB(paste,           C(S(KC_V)),     KC_O,          KC_U)
 
-// middle row
-COMB(rs_tab,          KC_TAB,         HRM_R,         HRM_S)
-COMB(st_delwrd,       C(KC_BSPC),     HRM_S,         HRM_T)
+// home row left
+COMB(tab,             KC_TAB,         HRM_R,         HRM_S)
+COMB(delword,         C(KC_BSPC),     HRM_S,         HRM_T)
 
-COMB(ne_esc,          KC_ESC,         HRM_N,         HRM_E)
-COMB(ei_ent,          KC_ENT,         HRM_E,         HRM_I)
-SUBS(nei_write,       "\e:w\n",       HRM_N,         HRM_E,         HRM_I)
+// home row right
+COMB(escape,          KC_ESC,         HRM_N,         HRM_E)
+COMB(enter,           KC_ENT,         HRM_E,         HRM_I)
+SUBS(vim_save,        "\e:w\n",       HRM_N,         HRM_E,         HRM_I)
 
-// bottom row
-COMB(jv_coln,         KC_COLN,        KC_J,          KC_V)
-COMB(vd_xmonad,       G(KC_A),        KC_V,          SYM_D)
-COMB(dk_shift,        OSM(MOD_LSFT),  SYM_D,         KC_K)
+// bottom row left
+COMB(vim_cmd,         KC_COLN,        HRM_J,         KC_V)
+COMB(xmonad,          G(KC_A),        KC_V,          HRM_D)
 
-COMB(xh_shift,        OSM(MOD_RSFT),  KC_X,          SYM_H)
-COMB(h_slash_wterm,   A(KC_A),        SYM_H,         KC_SLSH)
-COMB(slsh_comm_bsls,  KC_BSLS,        KC_SLSH,       KC_COMM)
+// bottom row right
+COMB(wezterm,         A(KC_A),        HRM_H,         KC_SLSH)
+COMB(esc_seq,         KC_BSLS,        KC_SLSH,       HRM_COM)
+
 
 /* vim: set filetype=c: */
 

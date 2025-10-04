@@ -7,14 +7,11 @@ LTO_ENABLE = yes
 
 # Software features
 AUTOCORRECT_ENABLE = yes
+CAPS_WORD_ENABLE   = yes
 COMBO_ENABLE       = yes
 REPEAT_KEY_ENABLE  = yes
-LEADER_ENABLE      = yes
 
 # Combo dictionary
 ifeq ($(COMBO_ENABLE),yes)
 	VPATH += keyboards/gboards
 endif
-
-# Enable casemode
-SRC += features/casemodes.c
