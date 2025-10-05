@@ -12,10 +12,6 @@ COMB(num_8,           KC_8,           KC_O,          HRM_E)
 COMB(num_9,           KC_9,           KC_U,          HRM_I)
 COMB(num_0,           KC_0,           KC_QUOT,       KC_A)
 
-// top row
-COMB(capsword,        CW_TOGG,        KC_L,          KC_Y)
-COMB(paste,           C(S(KC_V)),     KC_O,          KC_U)
-
 // home row left
 COMB(tab,             KC_TAB,         HRM_R,         HRM_S)
 COMB(delword,         C(KC_BSPC),     HRM_S,         HRM_T)
@@ -28,11 +24,12 @@ SUBS(vim_save,        "\e:w\n",       HRM_N,         HRM_E,         HRM_I)
 // bottom row left
 COMB(vim_cmd,         KC_COLN,        HRM_J,         KC_V)
 COMB(xmonad,          G(KC_A),        KC_V,          HRM_D)
+COMB(capsword,        CW_TOGG,        HRM_J,         HRM_D)
 
 // bottom row right
 COMB(wezterm,         A(KC_A),        HRM_H,         KC_SLSH)
 COMB(esc_seq,         KC_BSLS,        KC_SLSH,       HRM_COM)
-
+COMB(paste,           C(S(KC_V)),     HRM_H,         HRM_COM)
 
 /* vim: set filetype=c: */
 
