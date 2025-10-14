@@ -19,17 +19,14 @@ COMB(delword,         C(KC_BSPC),     HRM_S,         HRM_T)
 // home row right
 COMB(escape,          KC_ESC,         HRM_N,         HRM_E)
 COMB(enter,           KC_ENT,         HRM_E,         HRM_I)
-SUBS(vim_save,        "\e:w\n",       HRM_N,         HRM_E,         HRM_I)
 
 // bottom row left
 COMB(vim_cmd,         KC_COLN,        HRM_J,         KC_V)
 COMB(xmonad,          G(KC_A),        KC_V,          HRM_D)
-COMB(capsword,        CW_TOGG,        HRM_J,         HRM_D)
 
 // bottom row right
 COMB(wezterm,         A(KC_A),        HRM_H,         KC_SLSH)
 COMB(esc_seq,         KC_BSLS,        KC_SLSH,       HRM_COM)
-COMB(paste,           C(S(KC_V)),     HRM_H,         HRM_COM)
 
 /* vim: set filetype=c: */
 

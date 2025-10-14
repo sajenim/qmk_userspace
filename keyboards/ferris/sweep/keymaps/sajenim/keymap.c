@@ -71,6 +71,7 @@ enum custom_keycodes {
 #define OS_RSFT OSM(MOD_RSFT)
 #define OS_RALT OSM(MOD_RALT)
 #define OS_RGUI OSM(MOD_RGUI)
+#define OS_SYM  OSL(SYM)
 
 #include "g/keymap_combo.h" // layer names must be defined before engine include
 
@@ -94,7 +95,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
       XXXXXXX, OS_LALT, OS_LSFT, OS_LGUI, KC_VOLD,                      KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT,  KC_DEL,
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, OS_LCTL, XXXXXXX,                      XXXXXXX,  KC_TAB, XXXXXXX, XXXXXXX, XXXXXXX,
+      XXXXXXX,  OS_SYM, XXXXXXX, OS_LCTL, XXXXXXX,                      XXXXXXX,  KC_TAB, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------|
                                           _______, _______,    _______, _______
                                       //`-----------------'  `-----------------'
@@ -106,7 +107,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
          KC_0,    KC_4,    KC_5,    KC_6,  KC_EQL,                      XXXXXXX, OS_RGUI, OS_RSFT, OS_RALT, XXXXXXX,
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
-      KC_COMM,    KC_1,    KC_2,    KC_3,  KC_DOT,                      XXXXXXX, OS_RCTL, XXXXXXX, XXXXXXX, XXXXXXX,
+      KC_COMM,    KC_1,    KC_2,    KC_3,  KC_DOT,                      XXXXXXX, OS_RCTL, XXXXXXX,  OS_SYM, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------|
                                           _______, _______,    _______, _______
                                       //`-----------------'  `-----------------'
