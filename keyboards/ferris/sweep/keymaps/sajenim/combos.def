@@ -16,9 +16,13 @@ COMB(num_0,           KC_0,           KC_QUOT,       KC_A)
 COMB(tab,             KC_TAB,         HRM_R,         HRM_S)
 COMB(delword,         C(KC_BSPC),     HRM_S,         HRM_T)
 
+// home row middle
+COMB(capsword,        CW_TOGG,        HRM_S,         HRM_E)
+
 // home row right
 COMB(escape,          KC_ESC,         HRM_N,         HRM_E)
 COMB(enter,           KC_ENT,         HRM_E,         HRM_I)
+SUBS(vim_save,        "\e:w\n",       HRM_N,         HRM_E,         HRM_I)
 
 // bottom row left
 COMB(vim_cmd,         KC_COLN,        HRM_J,         KC_V)
